@@ -1,0 +1,55 @@
+<div class="flex-cards">
+    <div cdkDropListGroup class="fases">
+        <div *ngFor="let item of quantidadeFases; let last = last">
+            <h1 class="titulo" *ngIf="last">{{item}}ª Fase ativa do time</h1>
+            <p class="info" *ngIf="last">Resumo</p>
+        </div>
+
+        <div class="container">
+            <h2>Missões da fase</h2>
+
+            <div cdkDropList [cdkDropListData]="tarefasFase" class="list" (cdkDropListDropped)="drop($event)">
+                <div class="box" *ngFor="let item of tarefasFase" cdkDrag>{{item}}<mat-icon aria-hidden="false" class="excluir"
+                        (click)=deletarTarefaFase(item)>delete
+                    </mat-icon>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <h2>Missões disponíveis</h2>
+
+            <div cdkDropList [cdkDropListData]="disponivel" class="list" (cdkDropListDropped)="drop($event)">
+                <div class="box" *ngFor="let item of disponivel" cdkDrag>{{item}}<mat-icon aria-hidden="false"
+                        class="excluir" (click)=deletarTarefaDisponivel(item)>delete
+                    </mat-icon>
+                </div>
+            </div>
+        </div>
+
+        <div class="cadastrar-fase">
+            <button mat-raised-button type="button" color="primary"
+                (click)="cadastrarFase()" (click)="openSnackBar()">Cadastrar Fase</button>
+        </div>
+
+    </div>
+
+    <div class="cadastro-tarefa">
+        <h1 class="titulo">Nova Missão para Fase</h1>
+        <p class="info">Cadastro</p>
+
+        <div class="formulario-cadastro-missao">
+            <div class="descricao">
+                <mat-form-field appearance="fill">
+                    <mat-label>Descrição</mat-label>
+                    <input matInput type="text" #descricao placeholder="Ex.: Fazer trabalho">
+                    <mat-hint>Descreva de forma breve a nova missão que será criada</mat-hint>
+                </mat-form-field>
+            </div>
+            <div class="botao">
+                <button mat-raised-button type="button" color="primary"
+                    (click)="putInDisponivel(descricao.value)">Cadastrar</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,58 @@
+<div class="flex-cards">
+    <div cdkDropListGroup class="missoes">
+        <h1 class="titulo">Missões ativas</h1>
+        <p class="info">Resumo</p>
+
+        <div class="container">
+            <h2>A fazer</h2>
+
+            <div cdkDropList [cdkDropListData]="todo" class="list" (cdkDropListDropped)="drop($event)">
+                <div class="box" *ngFor="let item of todo" cdkDrag>{{item}}<mat-icon aria-hidden="false" class="excluir"
+                        (click)=deletarTarefaAFazer(item)>delete
+                    </mat-icon>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <h2>Fazendo</h2>
+
+            <div cdkDropList [cdkDropListData]="doing" class="list" (cdkDropListDropped)="drop($event)">
+                <div class="box" *ngFor="let item of doing" cdkDrag>{{item}}<mat-icon aria-hidden="false"
+                        class="excluir" (click)=deletarTarefaFazendo(item)>delete
+                    </mat-icon>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <h2>Feito</h2>
+
+            <div cdkDropList [cdkDropListData]="done" class="list" (cdkDropListDropped)="drop($event)">
+                <div class="box" *ngFor="let item of done" cdkDrag>{{item}}<mat-icon aria-hidden="false" class="excluir"
+                        (click)=deletarTarefaFeita(item)>delete
+                    </mat-icon>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cadastro-tarefa">
+        <h1 class="titulo">Nova Missão</h1>
+        <p class="info">Cadastro</p>
+
+        <div class="formulario-cadastro-missao">
+            <div class="descricao">
+                <mat-form-field appearance="fill">
+                    <mat-label>Descrição</mat-label>
+                    <input matInput type="text" #descricao placeholder="Ex.: Fazer trabalho">
+                    <mat-hint>Descreva de forma breve a nova missão que será criada</mat-hint>
+                </mat-form-field>
+            </div>
+            <div class="botao">
+                <button mat-raised-button type="button" color="primary"
+                    (click)="putInToDo(descricao.value)">Cadastrar</button>
+            </div>
+        </div>
+    </div>
+</div>

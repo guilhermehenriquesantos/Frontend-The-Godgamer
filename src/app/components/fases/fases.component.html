@@ -1,15 +1,15 @@
 <div class="flex-cards">
     <div cdkDropListGroup class="fases">
         <div *ngFor="let item of quantidadeFases; let last = last">
-            <h1 class="titulo" *ngIf="last">{{item}}ª Fase ativa do time</h1>
+            <h1 class="titulo" *ngIf="last">{{item.descricao}}ª Fase ativa do time</h1>
             <p class="info" *ngIf="last">Resumo</p>
         </div>
 
         <div class="container">
             <h2>Missões da fase</h2>
 
-            <div cdkDropList [cdkDropListData]="tarefasFase" class="list" (cdkDropListDropped)="drop($event)">
-                <div class="box" *ngFor="let item of tarefasFase" cdkDrag>{{item}}<mat-icon aria-hidden="false" class="excluir"
+            <div cdkDropList [cdkDropListData]="tarefasFase" class="list" (cdkDropListDropped)="drop($event, 'todo')">
+                <div class="box" *ngFor="let item of tarefasFase" cdkDrag>{{item.descricao}}<mat-icon aria-hidden="false" class="excluir"
                         (click)=deletarTarefaFase(item)>delete
                     </mat-icon>
                 </div>
@@ -19,8 +19,8 @@
         <div class="container">
             <h2>Missões disponíveis</h2>
 
-            <div cdkDropList [cdkDropListData]="disponivel" class="list" (cdkDropListDropped)="drop($event)">
-                <div class="box" *ngFor="let item of disponivel" cdkDrag>{{item}}<mat-icon aria-hidden="false"
+            <div cdkDropList [cdkDropListData]="disponivel" class="list" (cdkDropListDropped)="drop($event, 'disponivel')">
+                <div class="box" *ngFor="let item of disponivel" cdkDrag>{{item.descricao}}<mat-icon aria-hidden="false"
                         class="excluir" (click)=deletarTarefaDisponivel(item)>delete
                     </mat-icon>
                 </div>
@@ -29,7 +29,7 @@
 
         <div class="cadastrar-fase">
             <button mat-raised-button type="button" color="primary"
-                (click)="cadastrarFase()" (click)="openSnackBar()">Cadastrar Fase</button>
+                (click)="cadastrarFase()">Cadastrar Fase</button>
         </div>
 
     </div>

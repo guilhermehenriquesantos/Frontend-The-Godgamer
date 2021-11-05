@@ -17,6 +17,9 @@ import { UsuariosComponent } from './components/usuarios/usuarios.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MissoesServiceService } from './services/missoes-service.service';
+import { HttpClientModule } from '@angular/common/http';
+import { FasesService } from './services/fases.service';
 
 @NgModule({
   declarations: [
@@ -40,8 +43,12 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatSnackBarModule,
     MatTableModule,
     MatPaginatorModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    MissoesServiceService,
+    FasesService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

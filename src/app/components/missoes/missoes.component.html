@@ -6,9 +6,9 @@
         <div class="container">
             <h2>A fazer</h2>
 
-            <div cdkDropList [cdkDropListData]="todo" class="list" (cdkDropListDropped)="drop($event)">
-                <div class="box" *ngFor="let item of todo" cdkDrag>{{item}}<mat-icon aria-hidden="false" class="excluir"
-                        (click)=deletarTarefaAFazer(item)>delete
+            <div cdkDropList [cdkDropListData]="todo" class="list" (cdkDropListDropped)="drop($event, 'todo')">
+                <div class="box" *ngFor="let item of todo" cdkDrag>{{item.descricao}}<mat-icon aria-hidden="false"
+                        class="excluir" (click)=deletarTarefaAFazer(item)>delete
                     </mat-icon>
                 </div>
             </div>
@@ -17,8 +17,8 @@
         <div class="container">
             <h2>Fazendo</h2>
 
-            <div cdkDropList [cdkDropListData]="doing" class="list" (cdkDropListDropped)="drop($event)">
-                <div class="box" *ngFor="let item of doing" cdkDrag>{{item}}<mat-icon aria-hidden="false"
+            <div cdkDropList [cdkDropListData]="doing" class="list" (cdkDropListDropped)="drop($event, 'doing')">
+                <div class="box" *ngFor="let item of doing" cdkDrag>{{item.descricao}}<mat-icon aria-hidden="false"
                         class="excluir" (click)=deletarTarefaFazendo(item)>delete
                     </mat-icon>
                 </div>
@@ -28,9 +28,9 @@
         <div class="container">
             <h2>Feito</h2>
 
-            <div cdkDropList [cdkDropListData]="done" class="list" (cdkDropListDropped)="drop($event)">
-                <div class="box" *ngFor="let item of done" cdkDrag>{{item}}<mat-icon aria-hidden="false" class="excluir"
-                        (click)=deletarTarefaFeita(item)>delete
+            <div cdkDropList [cdkDropListData]="done" class="list" (cdkDropListDropped)="drop($event, 'done')">
+                <div class="box" *ngFor="let item of done" cdkDrag>{{item.descricao}}<mat-icon aria-hidden="false"
+                        class="excluir" (click)=deletarTarefaFeita(item)>delete
                     </mat-icon>
                 </div>
             </div>

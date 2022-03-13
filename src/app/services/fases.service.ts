@@ -8,8 +8,8 @@ import { Fase } from '../classes/fase';
 })
 export class FasesService {
 
-  private fasesUrl: string;
-  private faseUrl: string;
+  public fasesUrl: string;
+  public faseUrl: string;
 
   constructor(private http: HttpClient) { 
     this.fasesUrl = 'http://162.214.113.100:8080/api/v1/fases';

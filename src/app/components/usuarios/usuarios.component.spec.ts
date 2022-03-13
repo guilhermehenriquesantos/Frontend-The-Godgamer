@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { UsuariosComponent } from './usuarios.component';
+
 
 describe('UsuariosComponent', () => {
   let component: UsuariosComponent;
@@ -8,9 +8,9 @@ describe('UsuariosComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UsuariosComponent ]
+      declarations: [UsuariosComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
@@ -19,7 +19,13 @@ describe('UsuariosComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('Componente Usuarios criado', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('Testando applyFilter', () => {
+    const event = { target: { value: 'hello' } } as any;
+    component.applyFilter(event);
+    expect(component.dataSource.filter).toBe('hello');
   });
 });

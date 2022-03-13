@@ -1,7 +1,7 @@
 import { Fase } from './fase';
 
 describe('Fase', () => {
-  it('should create an instance', () => {
+  it('Instancia de uma nova fase', () => {
     expect(new Fase()).toBeTruthy();
   });
 });

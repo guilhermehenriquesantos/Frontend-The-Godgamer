@@ -1,7 +1,7 @@
 import { Missao } from './missao';
 
 describe('Missao', () => {
-  it('should create an instance', () => {
+  it('Instancia de uma nova missao', () => {
     expect(new Missao()).toBeTruthy();
   });
 });

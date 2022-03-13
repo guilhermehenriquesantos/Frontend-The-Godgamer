@@ -8,8 +8,8 @@ import { Missao } from '../classes/missao';
 })
 export class MissoesServiceService {
 
-  private missoesUrl: string;
-  private missaoUrl: string;
+  public missoesUrl: string;
+  public missaoUrl: string;
 
   constructor(private http: HttpClient) { 
     this.missoesUrl = 'http://162.214.113.100:8080/api/v1/missoes';

@@ -1,6 +1,6 @@
 # Frontend do aplicação The Godgamer
 
-![Angular Badge](https://img.shields.io/badge/Angular-12-red?style=flat-square&logo=angular&logoColor=white)
+![Angular Badge](https://img.shields.io/badge/Angular-13-red?style=flat-square&logo=angular&logoColor=white)
 ![HTML Badge](https://img.shields.io/badge/HTML5-orange?style=flat-square&logo=html5&logoColor=white)
 ![SCSS Badge](https://img.shields.io/badge/CSS3-blue?style=flat-square&logo=css3&logoColor=white)
 ![TypeScript Badge](https://img.shields.io/badge/TypeScript-blue?style=flat-square&logo=typescript&logoColor=white)
